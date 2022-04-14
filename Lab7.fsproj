@@ -46,6 +46,7 @@
     <None Include="packages.config" />
     <Compile Include="Tasks\8.fs" />
     <Compile Include="Tasks\18.fs" />
+    <Compile Include="Tasks\28.fs" />
     <Compile Include="Tasks\Program.fs" />
   </ItemGroup>
   <ItemGroup>
