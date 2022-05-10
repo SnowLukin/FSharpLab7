@@ -56,6 +56,7 @@
     <Compile Include="Tasks\17_8.fs" />
     <Compile Include="Tasks\18_8.fs" />
     <Compile Include="Tasks\19_2.fs" />
+    <Compile Include="Tasks\19_10.fs" />
     <Compile Include="Tasks\Program.fs" />
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
