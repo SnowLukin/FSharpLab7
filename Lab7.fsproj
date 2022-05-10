@@ -51,6 +51,7 @@
     <Compile Include="Tasks\48.fs" />
     <Compile Include="Tasks\58.fs" />
     <Compile Include="Tasks\17_8.fs" />
+    <Compile Include="Tasks\18_8.fs" />
     <Compile Include="Tasks\Program.fs" />
   </ItemGroup>
   <ItemGroup>
