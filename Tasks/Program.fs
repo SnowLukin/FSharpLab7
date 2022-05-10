@@ -7,5 +7,6 @@ let main argv =
     //Task48.startTask
     //Task58.startTask
     //Task17_8.startTask
-    Task18_8.startTask
+    //Task18_8.startTask
+    Task19_2.startTask
     0
