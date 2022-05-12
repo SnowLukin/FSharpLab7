@@ -2,6 +2,7 @@
 
 open System
 open System.Text.RegularExpressions
+open System.Diagnostics
 
 type VehicleLicence(serialNumber: int, name: string, model: string, category: string, enginePower: int) =
     member this.serialNumber
@@ -85,6 +86,13 @@ type DocumentsBinaryList(list: List<VehicleLicence>) =
                     |_ -> binaryLoop documentsList.[middle + 1..] document
         binaryLoop this.list vehicleLicence
 
+let measureTime (timer: Stopwatch) method document =
+    timer.Reset()
+    timer.Start()
+    let isFound = method document
+    timer.Stop()
+    timer.ElapsedMilliseconds
+
 let compareVehicleLicence v1 v2 =
     if compare v1 v2 = 1 then
         printfn "Identical"
@@ -113,3 +121,21 @@ let startTask =
     let v2 = VehicleLicence(2, "", "", "", 1)
 
     compareVehicleLicence v1 v2
+
+    let timer = new Stopwatch()
+
+    let rand = System.Random()
+    let vehicleLicences = List.init(100000) (fun v -> VehicleLicence((rand.Next(100, 100000)), "", "", "", (rand.Next(2000, 20000))))
+
+    let listDocucuments = DocumentsList(vehicleLicences)
+    let arrayDocucuments = DocumentsArray(List.toArray vehicleLicences)
+    let setDocDocucuments = DocumentsSet(Set.ofList vehicleLicences)
+    let binaryListDocucuments = DocumentsBinaryList(vehicleLicences)
+
+    let missingVehicleLicence = VehicleLicence(500, "", "", "", 1)
+
+    printfn "List search time %d ms" (measureTime timer listDocucuments.searchDoc missingVehicleLicence)
+    printfn "Array search time %d ms" (measureTime timer arrayDocucuments.searchDoc missingVehicleLicence)
+    printfn "Set search time %d ms" (measureTime timer setDocDocucuments.searchDoc missingVehicleLicence)
+    printfn "Binary search time %d ms" (measureTime timer binaryListDocucuments.searchDoc missingVehicleLicence)
+    timer.Reset()
