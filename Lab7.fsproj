@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tasks\" />
-    <Folder Include="Tasks\Lab8\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
@@ -60,8 +59,8 @@
     <Compile Include="Tasks\19_10.fs" />
     <Compile Include="Tasks\19_17.fs" />
     <Compile Include="Tasks\20.fs" />
+    <Compile Include="Tasks\Lab8_5.fs" />
     <Compile Include="Tasks\Program.fs" />
-    <Compile Include="Tasks\Lab8\Lab8_5.fs" />
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
 </Project>
