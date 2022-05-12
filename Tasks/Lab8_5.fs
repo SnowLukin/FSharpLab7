@@ -48,10 +48,48 @@ type VehicleLicence(serialNumber: int, name: string, model: string, category: st
             | :? VehicleLicence as other -> if (this.serialNumber = other.serialNumber) then 1 else 0
             |_->0
 
+[<AbstractClass>]
+type DocumentCollection() =
+    abstract member searchDoc: VehicleLicence -> bool
+
+type DocumentsArray(documents: array<VehicleLicence>) =
+    inherit DocumentCollection()
+    member this.documents = documents
+    override this.searchDoc(document: VehicleLicence) =
+        Array.exists (fun x -> x = document) this.documents
+
+type DocumentsList(documents: List<VehicleLicence>) =
+    inherit DocumentCollection()
+    member this.documents = documents
+    override this.searchDoc(document: VehicleLicence) =
+        List.exists (fun x -> x = document) this.documents
+
+type DocumentsSet(documents: Set<VehicleLicence>) =
+    inherit DocumentCollection()
+    member this.documents = documents
+    override this.searchDoc(document: VehicleLicence) =
+        Set.exists (fun x -> x = document) this.documents
+
+type DocumentsBinaryList(list: List<VehicleLicence>) =
+    inherit DocumentCollection()
+    member this.list = list |> List.sortBy (fun (document: VehicleLicence) -> document.serialNumber)
+    override this.searchDoc(vehicleLicence) =    
+        let rec binaryLoop (documentsList: List<VehicleLicence>) (document: VehicleLicence) = 
+            match (List.length documentsList) with
+                 |0 -> false
+                 |i ->
+                    let middle = i / 2
+                    match sign <| compare document documentsList.[middle] with
+                    |0 -> true
+                    |1 -> binaryLoop documentsList.[.. middle - 1] document
+                    |_ -> binaryLoop documentsList.[middle + 1..] document
+        binaryLoop this.list vehicleLicence
+
 let compareVehicleLicence v1 v2 =
     if compare v1 v2 = 1 then
         printfn "Identical"
     else printfn "Not identical"
+
 let startTask =
     printfn "Create Vehicle Licence"
 
