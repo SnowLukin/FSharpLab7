@@ -40,7 +40,7 @@ let private task2 (string: string) =
     let list = List.sortBy (fun x -> getStandardDeviation string x) (Array.toList charArray)
     // converting list of chars to string
     list |> Array.ofList |> String
-
+2
 let startTask =
     printf "Task number: "
     match Console.ReadLine() |> Convert.ToInt32 with
