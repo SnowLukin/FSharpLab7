@@ -1,4 +1,4 @@
-﻿module Task18_8
+﻿module Lab7Task18_8
 
 open System
 

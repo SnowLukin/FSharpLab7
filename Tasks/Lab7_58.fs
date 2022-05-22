@@ -1,4 +1,4 @@
-﻿module Task58
+﻿module Lab7Task58
 
 open System
 

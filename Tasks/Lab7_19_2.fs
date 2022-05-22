@@ -1,4 +1,4 @@
-﻿module Task19_2
+﻿module Lab7Task19_2
 
 open System
 

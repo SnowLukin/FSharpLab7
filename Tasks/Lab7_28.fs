@@ -1,4 +1,4 @@
-﻿module Task28
+﻿module Lab7Task28
 
 let private getIndexesOfMaxElements list amountOfMaxElements =
     let rec loop subList amountOfMaxElements indexesOfMaxElements =

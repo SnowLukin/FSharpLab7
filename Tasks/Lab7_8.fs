@@ -1,4 +1,4 @@
-﻿module Task8
+﻿module Lab7Task8
 
 let removeAt index list =
     list |> List.indexed |> List.filter (fun (i, _) -> i <> index) |> List.map snd

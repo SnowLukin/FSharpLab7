@@ -1,4 +1,4 @@
-﻿module Task1
+﻿module Lab5Task1
 
 let printGreetings =
     printfn "Hello, World!"

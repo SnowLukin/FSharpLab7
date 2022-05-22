@@ -1,4 +1,4 @@
-﻿module Lab9_OOP
+﻿module Lab8_OOP
 
 type IPrint = interface
     abstract member Print: unit -> unit

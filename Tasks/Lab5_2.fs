@@ -1,4 +1,4 @@
-﻿module Task2
+﻿module Lab5Task2
 
 // Result Type
 type SolveResult =

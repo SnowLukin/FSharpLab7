@@ -1,4 +1,4 @@
-﻿module Task3
+﻿module Lab5Task3
 
 // Read Data from Input
 let private readData dataName =

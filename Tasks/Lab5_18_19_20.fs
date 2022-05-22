@@ -1,4 +1,4 @@
-﻿module Task181920
+﻿module Lab5Task181920
 
 open System
 

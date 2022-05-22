@@ -1,77 +1,87 @@
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-   <PropertyGroup>
-     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-     <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
-     <ProjectGuid>{E46B63EA-DAB3-4629-A08B-692BD3E487EA}</ProjectGuid>
-     <UseStandardResourceNames>true</UseStandardResourceNames>
-     <OutputType>Exe</OutputType>
-     <RootNamespace>Lab7</RootNamespace>
-     <UsePartialTypes>false</UsePartialTypes>
-     <AssemblyName>Lab7</AssemblyName>
-     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-   </PropertyGroup>
-   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
-     <DebugSymbols>true</DebugSymbols>
-     <Optimize>false</Optimize>
-     <OutputPath>bin\Debug</OutputPath>
-     <DefineConstants>DEBUG</DefineConstants>
-     <ErrorReport>prompt</ErrorReport>
-     <ExternalConsole>true</ExternalConsole>
-   </PropertyGroup>
-   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
-     <Optimize>true</Optimize>
-     <OutputPath>bin\Release</OutputPath>
-     <DefineConstants></DefineConstants>
-     <ErrorReport>prompt</ErrorReport>
-     <ExternalConsole>true</ExternalConsole>
-     <GenerateTailCalls>true</GenerateTailCalls>
-   </PropertyGroup>
-   <PropertyGroup>
-     <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
-   </PropertyGroup>
-   <PropertyGroup Condition="'$(VisualStudioVersion)' == '10.0' OR '$(VisualStudioVersion)' == '11.0'">
-     <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
-   </PropertyGroup>
-   <ItemGroup>
-     <Reference Include="mscorlib" />
-     <Reference Include="System" />
-     <Reference Include="System.Core" />
-     <Reference Include="System.Numerics" />
-     <Reference Include="FSharp.Core">
-       <HintPath>packages\FSharp.Core.4.7.2\lib\net45\FSharp.Core.dll</HintPath>
-     </Reference>
-   </ItemGroup>
-   <ItemGroup>
-     <Folder Include="Tasks\" />
-   </ItemGroup>
-   <ItemGroup>
-     <Compile Include="AssemblyInfo.fs" />
-     <None Include="packages.config" />
-     <Compile Include="Tasks\InputManager.fs" />
-     <Compile Include="Tasks\Lab5_1.fs" />
-     <Compile Include="Tasks\Lab5_2.fs" />
-     <Compile Include="Tasks\Lab5_3.fs" />
-     <Compile Include="Tasks\Lab5_11.fs" />
-     <Compile Include="Tasks\Lab5_12.fs" />
-     <Compile Include="Tasks\Lab5_13.fs" />
-     <Compile Include="Tasks\Lab5_14.fs" />
-     <Compile Include="Tasks\Lab5_15_16.fs" />
-     <Compile Include="Tasks\Lab5_17.fs" />
-     <Compile Include="Tasks\Lab5_18_19_20.fs" />
-     <Compile Include="Tasks\Lab7_8.fs" />
-     <Compile Include="Tasks\Lab7_17_8.fs" />
-     <Compile Include="Tasks\Lab7_18_8.fs" />
-     <Compile Include="Tasks\Lab7_19_2.fs" />
-     <Compile Include="Tasks\Lab7_19_10.fs" />
-     <Compile Include="Tasks\Lab7_19_17.fs" />
-     <Compile Include="Tasks\Lab7_20.fs" />
-     <Compile Include="Tasks\Lab7_28.fs" />
-     <Compile Include="Tasks\Lab7_38.fs" />
-     <Compile Include="Tasks\Lab7_48.fs" />
-     <Compile Include="Tasks\Lab7_58.fs" />
-     <Compile Include="Tasks\Lab8_5.fs" />
-     <Compile Include="Tasks\Lab8_OOP.fs" />
-     <Compile Include="Tasks\Program.fs" />
-   </ItemGroup>
-   <Import Project="$(FSharpTargetsPath)" />
- </Project>
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
+    <ProjectGuid>{E46B63EA-DAB3-4629-A08B-692BD3E487EA}</ProjectGuid>
+    <UseStandardResourceNames>true</UseStandardResourceNames>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lab7</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>Lab7</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ExternalConsole>true</ExternalConsole>
+    <GenerateTailCalls>true</GenerateTailCalls>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '10.0' OR '$(VisualStudioVersion)' == '11.0'">
+    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.Core">
+      <HintPath>packages\FSharp.Core.4.7.2\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tasks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <None Include="packages.config" />
+    <Compile Include="Tasks\InputManager.fs" />
+    <Compile Include="Tasks\Lab5_1.fs" />
+    <Compile Include="Tasks\Lab5_2.fs" />
+    <Compile Include="Tasks\Lab5_3.fs" />
+    <Compile Include="Tasks\Lab5_11.fs" />
+    <Compile Include="Tasks\Lab5_12.fs" />
+    <Compile Include="Tasks\Lab5_13.fs" />
+    <Compile Include="Tasks\Lab5_14.fs" />
+    <Compile Include="Tasks\Lab5_15_16.fs" />
+    <Compile Include="Tasks\Lab5_17.fs" />
+    <Compile Include="Tasks\Lab5_18_19_20.fs" />
+    <Compile Include="Tasks\Lab6_11.fs" />
+    <Compile Include="Tasks\Lab6_12_6.fs" />
+    <Compile Include="Tasks\Lab6_12_8.fs" />
+    <Compile Include="Tasks\Lab6_12_18.fs" />
+    <Compile Include="Tasks\Lab6_12_20.fs" />
+    <Compile Include="Tasks\Lab6_12_32.fs" />
+    <Compile Include="Tasks\Lab6_12_35.fs" />
+    <Compile Include="Tasks\Lab6_12_38.fs" />
+    <Compile Include="Tasks\Lab6_12_44.fs" />
+    <Compile Include="Tasks\Lab6_12_56.fs" />
+    <Compile Include="Tasks\Lab7_8.fs" />
+    <Compile Include="Tasks\Lab7_17_8.fs" />
+    <Compile Include="Tasks\Lab7_18_8.fs" />
+    <Compile Include="Tasks\Lab7_19_2.fs" />
+    <Compile Include="Tasks\Lab7_19_10.fs" />
+    <Compile Include="Tasks\Lab7_19_17.fs" />
+    <Compile Include="Tasks\Lab7_20.fs" />
+    <Compile Include="Tasks\Lab7_28.fs" />
+    <Compile Include="Tasks\Lab7_38.fs" />
+    <Compile Include="Tasks\Lab7_48.fs" />
+    <Compile Include="Tasks\Lab7_58.fs" />
+    <Compile Include="Tasks\Lab8_5.fs" />
+    <Compile Include="Tasks\Lab8_OOP.fs" />
+    <Compile Include="Tasks\Program.fs" />
+  </ItemGroup>
+  <Import Project="$(FSharpTargetsPath)" />
+</Project>

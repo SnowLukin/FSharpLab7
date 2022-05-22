@@ -1,4 +1,4 @@
-﻿module Task48
+﻿module Lab7Task48
 
 open System
 

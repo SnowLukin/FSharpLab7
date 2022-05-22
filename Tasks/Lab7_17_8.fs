@@ -1,4 +1,4 @@
-﻿module Task17_8
+﻿module Lab7Task17_8
 
 let getDigitsOfNumber number =
     let rec loop number result =

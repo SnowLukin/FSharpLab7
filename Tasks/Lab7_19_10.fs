@@ -1,4 +1,4 @@
-﻿module Task19_10
+﻿module Lab7Task19_10
 
 let startTask =
     let string = "abcaaba"

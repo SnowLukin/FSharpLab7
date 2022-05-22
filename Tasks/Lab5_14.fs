@@ -1,4 +1,4 @@
-﻿module Task14
+﻿module Lab5Task14
 
 open System
 

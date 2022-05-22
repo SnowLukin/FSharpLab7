@@ -1,4 +1,4 @@
-﻿module Task20
+﻿module Lab7Task20
 
 open System
 
