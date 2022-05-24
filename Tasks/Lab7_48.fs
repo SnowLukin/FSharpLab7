@@ -2,7 +2,7 @@
 
 open System
 
-let private getElement (element, _) = element
+let private getElement (index, _) = index
 
 let private tupleListToIntList list =
     let rec loop list resultList =
@@ -21,7 +21,7 @@ let private getMostFrequentElement list =
 let private getListOfIndexesOfMostFrequentElement list =
     let mostFrequentElement = getMostFrequentElement list
     let indexedList = List.indexed list
-    let filteredList = List.filter (fun (element, _) -> element = mostFrequentElement) indexedList
+    let filteredList = List.filter (fun (_, element) -> element = mostFrequentElement) indexedList
     tupleListToIntList filteredList
 
 
