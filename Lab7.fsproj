@@ -75,6 +75,7 @@
     <Compile Include="Tasks\Lab7_19_10.fs" />
     <Compile Include="Tasks\Lab7_19_17.fs" />
     <Compile Include="Tasks\Lab7_20.fs" />
+    <Compile Include="Tasks\Lab7_18.fs" />
     <Compile Include="Tasks\Lab7_28.fs" />
     <Compile Include="Tasks\Lab7_38.fs" />
     <Compile Include="Tasks\Lab7_48.fs" />

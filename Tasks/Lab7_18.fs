@@ -1,4 +1,4 @@
-﻿module Task18
+﻿module Lab7Task18
 
 let private getElementsBeforeMin list =
     let minElement = List.min list
