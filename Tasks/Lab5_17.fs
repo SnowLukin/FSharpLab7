@@ -7,7 +7,7 @@ let private getValueFromDevidersWithCondition number condition action initValue 
         if condition tempValue then action initialValue tempValue
         else initialValue
 
-    Task14.getValueFromDividers number checkCondition initValue
+    Lab5Task14.getValueFromDividers number checkCondition initValue
 
 let private getValueFromCoPrimesWithCondition number condition action initValue =
     let checkCondition initValue tempValue =
@@ -15,7 +15,7 @@ let private getValueFromCoPrimesWithCondition number condition action initValue 
         then action initValue tempValue
         else initValue
 
-    Task1516.getValuesFromCoprimes number checkCondition initValue
+    Lab5Task1516.getValuesFromCoprimes number checkCondition initValue
 
 let startTask =
     printf "Number: "

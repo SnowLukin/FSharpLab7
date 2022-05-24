@@ -7,18 +7,18 @@ open System
 // First subtask
 let private firstTask number =
     printfn "1) Amount of coprimes to number."
-    Task1516.eulerFunc number 0 1
+    Lab5Task1516.eulerFunc number 0 1
 
 // Second subtask
 let private secondTask number =
     printfn "2) Sum of digits multiple of 3."
-    Task13.detourDigitsRecDown number 0 (fun x y -> x + y)
+    Lab5Task13.detourDigitsRecDown number 0 (fun x y -> x + y)
 
 // Thid subtask
 let rec private getAmountOfDigitsCoprimeToNumber number initualNumber counter =
     if initualNumber = 0 then counter
     else
-        if Task1516.greatestCommonDivisor initualNumber number = 1 then
+        if Lab5Task1516.greatestCommonDivisor initualNumber number = 1 then
             getAmountOfDigitsCoprimeToNumber number (initualNumber / 10) (counter + 1)
         else getAmountOfDigitsCoprimeToNumber number (initualNumber / 10) counter
 

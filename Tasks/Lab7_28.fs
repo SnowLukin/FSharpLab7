@@ -5,7 +5,7 @@ let private getIndexesOfMaxElements list amountOfMaxElements =
         if amountOfMaxElements > 0 then
             let maxElement = List.max subList
             let indexOfMaxElement = List.findIndex (fun element -> element = maxElement) list
-            loop (Task8.removeAt indexOfMaxElement subList) (amountOfMaxElements - 1) (indexesOfMaxElements @ [indexOfMaxElement])
+            loop (Lab7Task8.removeAt indexOfMaxElement subList) (amountOfMaxElements - 1) (indexesOfMaxElements @ [indexOfMaxElement])
         else indexesOfMaxElements
     loop list amountOfMaxElements []
 

@@ -34,7 +34,7 @@ let startTask =
     printf "Number of elements in list: "
     let numberOfElements = Console.ReadLine() |> Convert.ToInt32
     printfn "Input list's elements"
-    let list = Task11.readList numberOfElements
+    let list = Lab6Task11.readList numberOfElements
     let avrValueOfPrimes = getAvarageValueOfPrimes list
     let result = getAvrValueOfNumbersGreaterThanValue list avrValueOfPrimes
     Console.WriteLine("Result {0}", result)

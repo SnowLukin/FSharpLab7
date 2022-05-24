@@ -4,6 +4,10 @@ open System
 open System.Text.RegularExpressions
 open System.Diagnostics
 
+type IPrint = interface
+    abstract member Print: unit -> unit
+    end
+
 type VehicleLicence(serialNumber: int, name: string, model: string, category: string, enginePower: int) =
     member this.serialNumber
         with get() = serialNumber
@@ -42,6 +46,16 @@ type VehicleLicence(serialNumber: int, name: string, model: string, category: st
         Console.WriteLine("Model: {0}", this.model)
         Console.WriteLine("Category: {0}", this.category)
         Console.WriteLine("EnginePower: {0}", this.enginePower)
+
+    override this.ToString() =            
+        sprintf "Serial number: %i\nName: %s\nModel: %s\nCategory: %s\nEnginePower: %i\n"
+            this.serialNumber this.name this.model this.category this.enginePower
+                                  
+    interface IPrint with
+        member this.Print() =
+            this.ToString()
+            |> printfn "%s\n"
+    member this.Print() = (this :> IPrint).Print()
 
     interface IComparable with
         member this.CompareTo(o:obj):int = 
@@ -113,8 +127,9 @@ let startTask =
     let enginePower = Convert.ToInt32(Console.ReadLine())
 
     let vehicleLicence = VehicleLicence(serialNumber, name, model, category, enginePower)
-    printfn "Showing results..."
-    vehicleLicence.print()
+    printfn "\nShowing results..."
+    //vehicleLicence.print()
+    vehicleLicence.Print()
 
     // Comparison 
     let v1 = VehicleLicence(1, "", "", "", 1)
